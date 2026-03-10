@@ -3,4 +3,16 @@ export { default as Ldpimage1 } from "./Images/ldpg-image-1.png";
 export { default as Ldpgimage2 } from "./Images/ldpg-image-2.png";
 export { default as Ldpgimage3 } from "./Images/ldpg-image-3.png";
 export { default as Malesmiling } from "./Images/male-smiling.png";
-export { default as Playvideoicon } from "./play-icon.svg";
+export { default as Playvideoicon } from "./Icons/play-icon.svg";
+export { default as Ellipse } from "./Images/Ellipse 1.png";
+export { default as Signup } from "./Icons/sign-up.svg";
+export { default as BrowseExplore } from "./Icons/browse&explore.svg";
+export { default as Personalised } from "./Icons/personalised.svg";
+export { default as HealthFeed } from "./Images/health-feed.png";
+export { default as ConnectProf } from "./Images/connect-trusted-professionals.png";
+export { default as SocialExp } from "./Images/calm-social-exp.png";
+export { default as PersonalisedExp } from "./Images/personalised-exp.png";
+export { default as Checkbox } from "./Icons/check-box.svg";
+export { default as HandsTogether } from "./Images/trust-built.png";
+export { default as DownloadIOS } from "./Images/download-ios.png";
+export { default as DownloadAndroid } from "./Images/download-android.png"

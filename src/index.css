@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --font-dm: "DM Sans", sans-serif;
+  --shadow-custom: 0 1.47px 4.41px 1.47px #00000026, 0 1.47px 2.94px 0 #0000004D;
+}
 
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
