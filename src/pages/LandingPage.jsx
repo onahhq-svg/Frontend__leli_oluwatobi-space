@@ -1,9 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import Header from "../components/header";
+import { Link } from 'react-router-dom';
 import { Bluecircle, Ldpimage1, Ldpgimage2, Ldpgimage3, Malesmiling, Playvideoicon, Ellipse, Signup, BrowseExplore, Personalised, HealthFeed, ConnectProf, SocialExp, PersonalisedExp, Checkbox, HandsTogether, DownloadIOS, DownloadAndroid } from "../assets";
 
-function DivComponent({description}) {
+function ProblemList({description}) {
   return (
     <div className="flex items-center bg-[#FFFFFF] rounded-[10px] m-auto text-[24px] font-medium text-[#0F172A} mt-6 gap-4.5 px-[6.53rem] py-2 -tracking-[1.1%] text-[#0F172A]">
       <img src={Playvideoicon} alt="A play-video icon" />
@@ -12,7 +13,7 @@ function DivComponent({description}) {
   );
 }
 
-const DivComponent2 = ({image, title, description, animationType }) => {
+const FeatureCards = ({image, title, description, animationType }) => {
   return (
     <div className="bg-[#FFFFFF] rounded-[20px] px-3.5 w-78.75 pt-5 pb-12.5 text-center -tracking-[1.1%]" data-aos={animationType}>
       <img src={image} alt="An image that visualise the text description" className="w-fit h-fit mb-3.5" />
@@ -22,7 +23,7 @@ const DivComponent2 = ({image, title, description, animationType }) => {
   );
 }
 
-function DivComponent3({description}) {
+function OfferInfo({description}) {
   return (
     <div className="text-6 text-[#475569] flex items-center gap-2.75 mb-5">
       <img src={Checkbox} alt="A checked-box icon" />
@@ -87,12 +88,12 @@ function LandingPage() {
               Health Information Is Scattered and Overwhelming
             </h2>
             {
-              <DivComponent description="Different apps for medication, fitness, therapy, and wellness" />
+              <ProblemList description="Different apps for medication, fitness, therapy, and wellness" />
             }
             {
-              <DivComponent description="Conflicting information with no clear source of truth" />
+              <ProblemList description="Conflicting information with no clear source of truth" />
             }
-            {<DivComponent description="Hard to know what applies to you" />}
+            {<ProblemList description="Hard to know what applies to you" />}
             <p className="text-[#FFFFFF] text-[16px] text-center mt-8">
               Managing your health shouldn’t feel this complicated.
             </p>
@@ -162,25 +163,25 @@ function LandingPage() {
             Key Features
           </h2>
           <div className="flex items-center justify-center gap-4">
-            <DivComponent2
+            <FeatureCards
               image={HealthFeed}
               title="A Unified Health Feed"
               description="Explore wellness tips, health content, and updates in one place."
               animationType="flip-right"
             />
-            <DivComponent2
+            <FeatureCards
               image={ConnectProf}
               title="Connect With Trusted Professionals"
               description="Follow verified doctors, therapists, and wellness experts."
               animationType="flip-left"
             />
-            <DivComponent2
+            <FeatureCards
               image={PersonalisedExp}
               title="Personalised Experience"
               description="Your feed adapts to your interests, needs, and location."
               animationType="flip-right"
             />
-            <DivComponent2
+            <FeatureCards
               image={SocialExp}
               title="Calm, Social Experience"
               description="Engage with health content in a supportive, distraction-free environment."
@@ -194,9 +195,9 @@ function LandingPage() {
             <h3 className="text-[48px] font-semibold text-[#0F172A] mb-8 leading-[120%] tracking-[1.1%]">
               Built with trust at the core
             </h3>
-            <DivComponent3 description="Verified health professionals" />
-            <DivComponent3 description="Privacy-first approach" />
-            <DivComponent3 description="Designed to grow witth your health journey" />
+            <OfferInfo description="Verified health professionals" />
+            <OfferInfo description="Privacy-first approach" />
+            <OfferInfo description="Designed to grow witth your health journey" />
             <p className="text-base text-[#475569] leading-5 mt-1">
               Your data stays yours
             </p>
@@ -217,11 +218,11 @@ function LandingPage() {
               Join a growing community focused on clarity, connection and
               wellbeing.
             </p>
-            <a href="#">
+            <Link to="/signup">
               <button className="mt-6 text-4 bg-[#0057A3] border border-[#E2E8F0] rounded-[10px] w-90.75 py-[17.5px] transition-transform duration-300 hover:scale-110">
                 Get Started
               </button>
-            </a>
+            </Link>
           </div>
         </section>
 

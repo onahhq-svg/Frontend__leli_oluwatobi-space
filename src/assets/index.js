@@ -15,4 +15,7 @@ export { default as PersonalisedExp } from "./Images/personalised-exp.png";
 export { default as Checkbox } from "./Icons/check-box.svg";
 export { default as HandsTogether } from "./Images/trust-built.png";
 export { default as DownloadIOS } from "./Images/download-ios.png";
-export { default as DownloadAndroid } from "./Images/download-android.png"
+export { default as DownloadAndroid } from "./Images/download-android.png";
+export { default as SignupScreen } from "./Images/sign-up-screen.jpg";
+export { default as Logo } from "./Icons/logo.svg";
+export { default as CloseEye } from "./Icons/Close eye.svg";

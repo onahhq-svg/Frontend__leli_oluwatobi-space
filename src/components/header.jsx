@@ -1,5 +1,7 @@
 import { useState } from "react";
 import logo from '../assets/Icons/logo.svg'
+import { Link } from "react-router-dom";
+
 
 function Header() {
     return (
@@ -18,7 +20,7 @@ function Header() {
         </ul>
         <ul className="flex gap-10 items-center">
           <li className="bg-[#0072CE] border rounded-[10px] border-[#E2E8F0] text-[#FFFFFF] p-2.5">
-            <a href="#">Get Started</a>
+            <Link to="/signup">Get Started</Link>
           </li>
           <li>
             <a href="#">Sign In</a>
