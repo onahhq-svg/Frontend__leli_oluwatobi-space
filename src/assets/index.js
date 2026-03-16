@@ -19,3 +19,6 @@ export { default as DownloadAndroid } from "./Images/download-android.png";
 export { default as SignupScreen } from "./Images/sign-up-screen.jpg";
 export { default as Logo } from "./Icons/logo.svg";
 export { default as CloseEye } from "./Icons/Close eye.svg";
+export { default as GoogleIcon } from "./Icons/google-icon.svg";
+export { default as AppleIcon } from "./Icons/apple-icon.svg";
+export { default as FacebookIcon } from "./Icons/facebook-icon.svg";
