@@ -1,16 +1,17 @@
 import { AppleIcon, CloseEye, FacebookIcon, GoogleIcon, Logo } from "../../assets"
 import { Link } from "react-router-dom"
+import SignupinHeader from "../../components/signupin-header";
 
-function InputField({ htmlFor, labelname, inputType, inputName, inputID, placeholder }) {
+export function InputField({ htmlFor, labelname, inputType, inputName, inputID, placeholder }) {
   return (
-    <div className="w-105.25 flex flex-col gap-2 placeholder:text-sm relative">
+    <div className="flex flex-col gap-2 relative">
       <label htmlFor={htmlFor}>{labelname}</label>
         <input
           type={inputType}
           name={inputName}
           id={inputID}
           placeholder={placeholder}
-          className="rounded-md border border-[#E2E8F0] p-2.5 focus:outline-[#E2E8F0] placeholder:text-[#475569] placeholder:font-semibold"
+          className="rounded-md border border-[#E2E8F0] p-2.5 focus:outline-[#E2E8F0] placeholder:text-[#475569] placeholder:font-medium placeholder:text-sm placeholder:leading-5.25"
         />
         {inputType === "password" && 
           (
@@ -20,7 +21,28 @@ function InputField({ htmlFor, labelname, inputType, inputName, inputID, placeho
   );
 }
 
-function SignupOption({image}) {
+export function SubmitButton({text}) {
+  return (
+    <button
+      type="submit"
+      className="bg-[#E6F1FA] border border-[#E2E8F0] rounded-[10px] py-2.5 font-semibold text-base"
+    >
+      {text}
+    </button>
+  );
+}
+
+export function IntroduceOtherAuthOptions({text}) {
+  return (
+    <div className="flex items-center mx-12.5 mt-5">
+      <div className="grow border-t border-[#E2E8F0]"></div>
+      <p className="text-[#475569] mx-3 font-medium">{ text }</p>
+      <div className="grow border-t border-[#E2E8F0]"></div>
+    </div>
+  );
+}
+
+export function SignupOption({image}) {
   return (
     <div className="border-[0.7px] border-[#E2E8F0] shadow-[0_0.7_1.41_0_#1018280D] rounded-[5.63px] w-17.5 py-[11.55px]">
       <img src={image} alt="A google display icon" className="mx-auto" />
@@ -28,10 +50,25 @@ function SignupOption({image}) {
   );
 }
 
+export function SignupOptions() {
+  return (
+    <div className="w-[234.54px] flex items-center mx-auto gap-[11.27px] mt-5">
+      <SignupOption image={GoogleIcon} />
+      <SignupOption image={AppleIcon} />
+      <SignupOption image={FacebookIcon} />
+    </div>
+  );
+}
+export function FinalAuthScreenElement({ text }) {
+  return (
+    <p className="text-center text-[#475569] text-[12px] mt-2.25">{text}</p>
+  );
+}
+
 function SignUp() {
     return (
-      <section className="bg-linear-to-tr from-[#B6D6DC] to-[#0072CE] w-full flex items-center justify-between gap-15 px-15 py-16.25">
-        <section className="bg-hero bg-cover bg-center rounded-tl-[100px] rounded-br-[100px] h-223.25 w-[50%] text-center text-[#FFFFFF] font-semibold relative shadow-signup px-6 pb-38.5">
+      <section className="bg-linear-to-tr from-[#B6D6DC] to-[#0072CE] w-full min-h-screen grid grid-cols-2 justify-between gap-15 px-15 py-16.25">
+        <section className="bg-hero bg-cover bg-center rounded-tl-[100px] rounded-br-[100px] text-center text-[#FFFFFF] font-semibold relative shadow-signup px-6 pb-38.5">
           <div className="bg-[#44546266] inset-0 rounded-br-[100px] rounded-tl-[100px] absolute"></div>
           <div className="mt-127 relative z-10">
             <h2 className="text-[48px] leading-[100%]">New Here?</h2>
@@ -42,16 +79,8 @@ function SignUp() {
           </div>
         </section>
 
-        <section className="rounded-tl-[100px] rounded-br-[100px] bg-[#F7F9FC] h-223.25 w-[50%] px-10 -13">
-          <div className="flex flex-col items-center justify-center">
-            <img src={Logo} alt="HealTek lgoo icon" />
-            <h3 className="text-[#0F172A] font-semibold text-2xl mt-4 mb-2">
-              Create an Account
-            </h3>
-            <p className="text-base text-[#475569]">
-              Start your journey to better health
-            </p>
-          </div>
+        <section className="rounded-tl-[100px] rounded-br-[100px] bg-[#F7F9FC] px-10 py-12">
+          <SignupinHeader />
           <div className="bg-[#FFFFFF] rounded-tl-[40px] py-[36.5px] rounded-br-[100px] mt-5">
             <form
               action=""
@@ -105,29 +134,18 @@ function SignUp() {
                   <span className="text-[#0072CE]"> Privacy Policy</span>
                 </label>
               </div>
-              <button
-                type="submit"
-                className="bg-[#E6F1FA] border border-[#E2E8F0] rounded-[10px] py-2.5 font-semibold text-base"
-              >
-                Create account
-              </button>
+              <SubmitButton text="Create Account" />
             </form>
-            <div className="flex items-center mx-12.5 mt-5">
-              <div className="grow border-t border-[#E2E8F0]"></div>
-              <p className="text-[#475569] mx-3 font-medium">Or Sign Up With</p>
-              <div className="grow border-t border-[#E2E8F0]"></div>
-            </div>
-            <div className="w-[234.54px] flex items-center mx-auto gap-[11.27px] mt-5">
-              <SignupOption image={GoogleIcon} />
-              <SignupOption image={AppleIcon} />
-              <SignupOption image={FacebookIcon} />
-            </div>
-            <p className="text-center text-[#475569] text-[12px] mt-2.25">
-              Already have an account?{" "}
-              <Link to="/login" className="text-[#0072CE]">
-                Login
-              </Link>
-            </p>
+            <IntroduceOtherAuthOptions text="Or Sign Up With" />
+            <SignupOptions />
+            <FinalAuthScreenElement text={
+              <>
+                Already have an account?{" "}
+                <Link to="/login" className="text-[#0072CE]">
+                  Login
+                </Link>
+              </>}
+            />
           </div>
         </section>
       </section>

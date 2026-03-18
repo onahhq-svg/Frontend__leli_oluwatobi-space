@@ -23,7 +23,7 @@ function Header() {
             <Link to="/signup">Get Started</Link>
           </li>
           <li>
-            <a href="#">Sign In</a>
+            <Link to="/login">Sign In</Link>
           </li>
         </ul>
       </nav>
