@@ -38,7 +38,10 @@ function LandingPage() {
         <Header />
 
         <section className="my-18 mx-16 bg-[#E5F1FA] rounded-[20px] px-3.75 flex items-end gap-11.75">
-          <div className="my-23.25 -[100%] -tracking-[1.1%] w-138.5" data-aos="zoom-in">
+          <div
+            className="my-23.25 -[100%] -tracking-[1.1%] w-138.5"
+            data-aos="zoom-in"
+          >
             <h1 className="font-bold text-[56px] text-[#0F172A] leading-15.5">
               Your Health, Connected In One Place
             </h1>
@@ -47,9 +50,11 @@ function LandingPage() {
               professionals, and explore wellness in a simple, human, and
               unified platform.
             </p>
-            <button className="bg-[#0072CE] p-2.5 border border-[#E2E8F0] rounded-[10px] mt-8 w-103.75 text-[#FFFFFF] text-lg">
-              Get Started
-            </button>
+            <Link to="/signup">
+              <button className="bg-[#0072CE] p-2.5 border border-[#E2E8F0] rounded-[10px] mt-8 w-103.75 text-[#FFFFFF] text-lg cursor-pointer">
+                Get Started
+              </button>
+            </Link>
             <p className="text-[#475569] text-sm mt-6">
               Available on Web and mobile
             </p>
@@ -104,7 +109,8 @@ function LandingPage() {
           <img
             src={Ellipse}
             alt="A diagram with infos of healthcare knowledge"
-            className="w-[34.8rem] -[33.94rem]" data-aos="fade-right-down"
+            className="w-[34.8rem] -[33.94rem]"
+            data-aos="fade-right-down"
           />
 
           <div data-aos="zoom-out" data-aos-duration="600">
@@ -205,7 +211,9 @@ function LandingPage() {
           <img
             src={HandsTogether}
             alt="An image of hands joined together to symbolise a built trust"
-            className="w-188.75" data-aos="fade-down" data-aos-duration="800"
+            className="w-188.75"
+            data-aos="fade-down"
+            data-aos-duration="800"
           />
         </section>
 

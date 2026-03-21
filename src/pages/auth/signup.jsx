@@ -1,69 +1,9 @@
 import { AppleIcon, CloseEye, FacebookIcon, GoogleIcon, Logo } from "../../assets"
 import { Link } from "react-router-dom"
-import SignupinHeader from "../../components/signupin-header";
+import SignupinHeader from "../../components/auth-screen-components";
+import { InputField, SubmitButton, IntroduceOtherAuthOptions, SignupOptions, FinalAuthScreenElement } from "../../components/auth-screen-components";
 
-export function InputField({ htmlFor, labelname, inputType, inputName, inputID, placeholder }) {
-  return (
-    <div className="flex flex-col gap-2 relative">
-      <label htmlFor={htmlFor}>{labelname}</label>
-        <input
-          type={inputType}
-          name={inputName}
-          id={inputID}
-          placeholder={placeholder}
-          className="rounded-md border border-[#E2E8F0] p-2.5 focus:outline-[#E2E8F0] placeholder:text-[#475569] placeholder:font-medium placeholder:text-sm placeholder:leading-5.25"
-        />
-        {inputType === "password" && 
-          (
-          <img src={CloseEye} alt="A close eye symbol" className="w-5.5 absolute cursor-pointer -translate-y-1/2 top-3/4 left-7/8" />
-        )} 
-    </div>
-  );
-}
 
-export function SubmitButton({text}) {
-  return (
-    <button
-      type="submit"
-      className="bg-[#E6F1FA] border border-[#E2E8F0] rounded-[10px] py-2.5 font-semibold text-base"
-    >
-      {text}
-    </button>
-  );
-}
-
-export function IntroduceOtherAuthOptions({text}) {
-  return (
-    <div className="flex items-center mx-12.5 mt-5">
-      <div className="grow border-t border-[#E2E8F0]"></div>
-      <p className="text-[#475569] mx-3 font-medium">{ text }</p>
-      <div className="grow border-t border-[#E2E8F0]"></div>
-    </div>
-  );
-}
-
-export function SignupOption({image}) {
-  return (
-    <div className="border-[0.7px] border-[#E2E8F0] shadow-[0_0.7_1.41_0_#1018280D] rounded-[5.63px] w-17.5 py-[11.55px]">
-      <img src={image} alt="A google display icon" className="mx-auto" />
-    </div>
-  );
-}
-
-export function SignupOptions() {
-  return (
-    <div className="w-[234.54px] flex items-center mx-auto gap-[11.27px] mt-5">
-      <SignupOption image={GoogleIcon} />
-      <SignupOption image={AppleIcon} />
-      <SignupOption image={FacebookIcon} />
-    </div>
-  );
-}
-export function FinalAuthScreenElement({ text }) {
-  return (
-    <p className="text-center text-[#475569] text-[12px] mt-2.25">{text}</p>
-  );
-}
 
 function SignUp() {
     return (

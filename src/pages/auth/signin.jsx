@@ -1,6 +1,6 @@
 import { AppleIcon, FacebookIcon, GoogleIcon } from "../../assets";
-import SignupinHeader from "../../components/signupin-header";
-import { FinalAuthScreenElement, InputField, IntroduceOtherAuthOptions, SignupOption, SignupOptions, SubmitButton } from "./signup";
+import SignupinHeader from "../../components/auth-screen-components";
+import { FinalAuthScreenElement, InputField, IntroduceOtherAuthOptions, SignupOptions, SubmitButton } from "../../components/auth-screen-components";
 import { Link } from "react-router-dom";
 
 function Login() {
@@ -17,7 +17,7 @@ function Login() {
           </div>
         </section>
         <section className="bg-[#F7F9FC] relative overflow-hidden rounded-tl-[100px] rounded-br-[60px] py-22.5 px-12.5">
-          <div className="bg-[#0072CE] absolute blur-[120px] -top-45 left-1/2 -translate-x-1/3 h-67.25 w-[500px] rounded-full"></div>
+          <div className="bg-[#0072CE] absolute blur-[120px] -top-45 left-1/2 -translate-x-1/3 h-67.25 w-125 rounded-full"></div>
 
           <SignupinHeader />
           <div className="bg-[#FFFFFF] border border-[#E2E8F0] rounded-tl-[40px] rounded-br-[100px] mt-5 py-25">
