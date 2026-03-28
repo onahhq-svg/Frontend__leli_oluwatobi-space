@@ -1,7 +1,7 @@
 import { AppleIcon, CloseEye, FacebookIcon, GoogleIcon, Logo } from "../../assets"
 import { Link } from "react-router-dom"
-import SignupinHeader from "../../components/auth-screen-components";
-import { InputField, SubmitButton, IntroduceOtherAuthOptions, SignupOptions, FinalAuthScreenElement } from "../../components/auth-screen-components";
+import SignupinHeader from "../../components/auth-screens-components";
+import { InputField, SubmitButton, IntroduceOtherAuthOptions, SignupOptions, FinalAuthScreenElement } from "../../components/auth-screens-components";
 
 
 
@@ -70,8 +70,8 @@ function SignUp() {
                   className="text-[#A9A9A9] font-semibold text-[12px] leading-3.5"
                 >
                   I agree to the Leli
-                  <span className="text-[#0072CE]"> Terms of Service</span> and
-                  <span className="text-[#0072CE]"> Privacy Policy</span>
+                  <a className="text-[#0072CE]"> Terms of Service</a> and
+                  <a className="text-[#0072CE]"> Privacy Policy</a>
                 </label>
               </div>
               <SubmitButton text="Create Account" />

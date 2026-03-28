@@ -17,7 +17,7 @@ const FeatureCards = ({image, title, description, animationType }) => {
   return (
     <div className="bg-[#FFFFFF] rounded-[20px] px-3.5 w-78.75 pt-5 pb-12.5 text-center -tracking-[1.1%]" data-aos={animationType}>
       <img src={image} alt="An image that visualise the text description" className="w-fit h-fit mb-3.5" />
-      <h6 className="mb-2.5 text-base font-semibold leading-[136%]">{title}</h6>
+      <h6 className="mb-2.5 text-base font-semibold leading-[136%] tracking-tight">{title}</h6>
       <p className="text-sm">{description}</p>
     </div>
   );
@@ -168,7 +168,7 @@ function LandingPage() {
           <h2 className="text-[48px] font-semibold mb-8 -tracking-[1.1%] text-center">
             Key Features
           </h2>
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex items-center justify-center gap-3 px-3">
             <FeatureCards
               image={HealthFeed}
               title="A Unified Health Feed"

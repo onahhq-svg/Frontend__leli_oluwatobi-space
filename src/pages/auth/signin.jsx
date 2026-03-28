@@ -1,9 +1,24 @@
 import { AppleIcon, FacebookIcon, GoogleIcon } from "../../assets";
-import SignupinHeader from "../../components/auth-screen-components";
-import { FinalAuthScreenElement, InputField, IntroduceOtherAuthOptions, SignupOptions, SubmitButton } from "../../components/auth-screen-components";
+import SignupinHeader from "../../components/auth-screens-components";
+import { FinalAuthScreenElement, InputField, IntroduceOtherAuthOptions, SignupOptions, SubmitButton } from "../../components/auth-screens-components";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Login() {
+  const [error, setError] = useState({
+    email: "", password: {
+      minLength: false,
+      hasUpper: false,
+      hasSpecialChar: false
+  }});
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!password.length !== "correct123") {
+      setError("Wrong password");
+      return
+    }
+  }
     return (
       <section className="bg-[#F7F9FC] w-full min-h-screen grid grid-cols-2 gap-20 px-25 py-16">
         <section className="bg-hero bg-cover bg-no-repeat bg-center rounded-tl-[100px] -223.25 rounded-br-[100px] shadow-signup px-6 pb-38.5 relative">
@@ -41,6 +56,7 @@ function Login() {
                 inputID="password"
                 placeholder="********"
               />
+              {/* {error && <p className="text-[#DC2626]">{error}</p>} */}
               <SubmitButton text="Login" />
             </form>
             <IntroduceOtherAuthOptions text="Or Login with" />
@@ -49,7 +65,9 @@ function Login() {
               text={
                 <>
                   Don't have an account?{" "}
-                  <Link to="/signup" className="text-[#0072CE]">Create one</Link>
+                  <Link to="/signup" className="text-[#0072CE]">
+                    Create one
+                  </Link>
                 </>
               }
             />
