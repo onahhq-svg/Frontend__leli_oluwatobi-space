@@ -23,3 +23,4 @@ export { default as GoogleIcon } from "./Icons/google-icon.svg";
 export { default as AppleIcon } from "./Icons/apple-icon.svg";
 export { default as FacebookIcon } from "./Icons/facebook-icon.svg";
 export { default as OpenEye } from "./Icons/Open eye.svg";
+export { default as CheckedMarkIcon } from "./Icons/checked-icon.svg";

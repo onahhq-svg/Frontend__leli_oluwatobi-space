@@ -5,23 +5,25 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function Login() {
-  const [error, setError] = useState({
-    email: "", password: {
-      minLength: false,
-      hasUpper: false,
-      hasSpecialChar: false
-  }});
+  const [errors, setErrors] = useState({email: "", password: ""});
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!password.length !== "correct123") {
-      setError("Wrong password");
-      return
+    if (!password || !email) {
+      setErrors({email: !email ? "Email field is required" : "", password: !password ? "Password field is required": ""});
+    } else if (email !== "test@gmail.com" || password !== "test123") {
+      setErrors({email: "", password: "Incorrect email or password"});
+    } else {
+      alert("Login successfully!");
     }
+
   }
     return (
-      <section className="bg-[#F7F9FC] w-full min-h-screen grid grid-cols-2 gap-20 px-25 py-16">
-        <section className="bg-hero bg-cover bg-no-repeat bg-center rounded-tl-[100px] -223.25 rounded-br-[100px] shadow-signup px-6 pb-38.5 relative">
+      <section className="bg-linear-to-tr from-[#B6D6DC] to-[#0072CE] w-full min-h-screen grid grid-cols-2 gap-20 px-25 py-16">
+        <section className="bg-hero bg-cover bg-center rounded-tl-[100px] -223.25 rounded-br-[100px] shadow-signup px-6 pb-38.5 relative">
           <div className="bg-[#44546266]/80 inset-0 absolute rounded-tl-[100px] rounded-br-[100px]"></div>
           <div className="font-semibold text-[#FFFFFFCC] mt-120 mx-auto text-center relative z-10">
             <h2 className="text-[48px]">Welcome Back</h2>
@@ -40,24 +42,42 @@ function Login() {
               action=""
               className="px-4 text-sm text-[#0F172A] font-medium flex flex-col gap-5"
             >
-              <InputField
-                htmlFor="email-phonenumber"
-                labelname="Email/Phone Number"
-                inputType="text"
-                inputName="email-phonenumber"
-                inputID="email-phonenumber"
-                placeholder="Enter your email or phone number"
-              />
-              <InputField
-                htmlFor="password"
-                labelname="Password"
-                inputType="password"
-                inputName="password"
-                inputID="password"
-                placeholder="********"
-              />
-              {/* {error && <p className="text-[#DC2626]">{error}</p>} */}
-              <SubmitButton text="Login" />
+              <div>
+                <InputField
+                  htmlFor="email-phonenumber"
+                  labelname="Email/Phone Number"
+                  inputType="text"
+                  inputName="email-phonenumber"
+                  inputID="email-phonenumber"
+                  placeholder="Enter your email or phone number"
+                  hasError={errors.email}
+                  onChange={(e) => { setEmail(e.target.value); setErrors((prev) => ({...prev, email: ""})) }}
+                />
+                {errors.email && <p className="text-[#DC2626] text-xs mt-2">{errors.email}</p>}
+              </div>
+              <div>
+                <InputField
+                  htmlFor="password"
+                  labelname="Password"
+                  inputType="password"
+                  inputName="password"
+                  inputID="password"
+                  placeholder="********"
+                  hasError={errors.password}
+                  onChange={(e) => { setPassword(e.target.value); setErrors((prev) => ({...prev, password: ""})) }}
+                />
+                <div className="flex justify-between items-center text-xs mt-2.5">
+                  {errors && <p className="text-[#DC2626]">{errors.password}</p>}
+                  <p className="text-[#0F172A] text-right">
+                    Forgot Password?{" "}
+                    <Link to="" className="text-[#0072CE]">
+                      Click here
+                    </Link>
+                  </p>
+                </div>
+              </div>
+
+              <SubmitButton text="Login" onClick={handleSubmit} />
             </form>
             <IntroduceOtherAuthOptions text="Or Login with" />
             <SignupOptions />

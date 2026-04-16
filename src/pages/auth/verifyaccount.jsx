@@ -1,3 +1,4 @@
+import { CheckedMarkIcon } from "../../assets";
 import { VerificationCodeInput } from "../../components/auth-screens-components";
 
 function VerifyAccount(params) {
@@ -30,6 +31,21 @@ function VerifyAccount(params) {
             Verify and Login
           </button>
           <p className="text-[#4DA3E6] -tracking-[1.1%] mt-6">Back to Login</p>
+        </div>
+        <div className="fixed inset-0 w-full bg-[#FFFFFF80] backdrop-blur-md overflow-hidden flex justify-center items-center hidden">
+          <div className="bg-[#0072CE] w-125.75 rounded-xl flex flex-col gap-5 justify-center items-center text-[#FFFFFF] py-12.75 px-24.75 text-lg">
+            <img
+              src={CheckedMarkIcon}
+              alt="A mark icon describing a completed action"
+            />
+            <p>Account created successfully</p>
+            <button
+              type="submit"
+              className="bg-[#E6F1FA] w-full border-[#E2E8F0] border text-base text-[#0F172A] rounded-[10px] py-2.75 cursor-pointer"
+            >
+              Continue
+            </button>
+          </div>
         </div>
       </section>
     );

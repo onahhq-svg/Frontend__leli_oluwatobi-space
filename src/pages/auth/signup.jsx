@@ -1,11 +1,25 @@
 import { AppleIcon, CloseEye, FacebookIcon, GoogleIcon, Logo } from "../../assets"
 import { Link } from "react-router-dom"
+import { useState } from "react";
 import SignupinHeader from "../../components/auth-screens-components";
 import { InputField, SubmitButton, IntroduceOtherAuthOptions, SignupOptions, FinalAuthScreenElement } from "../../components/auth-screens-components";
 
 
 
 function SignUp() {
+  const [errors, setErrors] = useState({
+    email: "", password: {
+      minLength: "",
+      hasUpper: "",
+      hasSpecialChar: ""
+  }})
+  const validatePassword = (password) => {
+    return {
+      minLength: password.length >= 8,
+      hasUpper: /A-Z/.test(password),
+      hasSpecialChar: /[!@#$%^&*]/.test(password),
+    };
+  };
     return (
       <section className="bg-linear-to-tr from-[#B6D6DC] to-[#0072CE] w-full min-h-screen grid grid-cols-2 justify-between gap-15 px-15 py-16.25">
         <section className="bg-hero bg-cover bg-center rounded-tl-[100px] rounded-br-[100px] text-center text-[#FFFFFF] font-semibold relative shadow-signup px-6 pb-38.5">

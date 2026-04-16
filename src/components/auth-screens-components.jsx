@@ -23,6 +23,8 @@ export function InputField({
   inputName,
   inputID,
   placeholder,
+  hasError,
+  onChange
 }) {
   const [currentType, setCurrentType] = useState(inputType);
   function togglePassword(params) {
@@ -36,7 +38,9 @@ export function InputField({
         name={inputName}
         id={inputID}
         placeholder={placeholder}
-        className={`rounded-md border p-2.5 focus:outline-[#E2E8F0] placeholder:text-[#475569] placeholder:font-medium placeholder:text-sm placeholder:leading-5.25`}
+        onChange={onChange}
+        required
+        className={`rounded-md border p-2.5 focus:outline-[#E2E8F0] placeholder:text-[#475569] placeholder:font-medium placeholder:text-sm placeholder:leading-5.25 ${hasError ? "border-[#DC2626] text-[#DC2626]" : "border-[#E2E8F0] text-[#0F172A]"}`}
       />
       {inputType === "password" && (
         <img
@@ -51,11 +55,11 @@ export function InputField({
 }
 
 
-export function SubmitButton({ text }) {
+export function SubmitButton({ text, onClick }) {
   return (
     <button
       type="submit"
-      className="bg-[#E6F1FA] border border-[#E2E8F0] rounded-[10px] py-2.5 font-semibold text-base"
+      className="bg-[#E6F1FA] hover:bg-[#0072CEB2] border border-[#E2E8F0] rounded-[10px] py-2.5 font-semibold text-base" onClick={onClick}
     >
       {text}
     </button>
@@ -106,22 +110,3 @@ export function VerificationCodeInput() {
   );
 }
 
-export function BioOptionsButton({content}) {
-  return (
-    <button className="bg-[#E6F1FA] rounded-[10px] border border-[#E2E8F0] py-2.5 w-130.75">
-      {content}
-    </button>
-  );
-}
-
-export function BioOptionsDiv() {
-  return (
-    <div className="grid grid-rows-5 gap-2">
-      <BioOptionsButton content="18-24" />
-      <BioOptionsButton content="25-34" />
-      <BioOptionsButton content="35-44" />
-      <BioOptionsButton content="45-54" />
-      <BioOptionsButton content="55+" />
-    </div>
-  );  
-}
