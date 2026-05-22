@@ -8,7 +8,7 @@ function Login() {
   const [errors, setErrors] = useState({email: "", password: ""});
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState("");
+  const [loading, setLoading] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
 

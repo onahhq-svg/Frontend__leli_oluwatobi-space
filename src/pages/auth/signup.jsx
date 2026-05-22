@@ -8,18 +8,58 @@ import { InputField, SubmitButton, IntroduceOtherAuthOptions, SignupOptions, Fin
 
 function SignUp() {
   const [errors, setErrors] = useState({
-    email: "", password: {
-      minLength: "",
-      hasUpper: "",
-      hasSpecialChar: ""
-  }})
+    fullName: "", email: "", password: {
+      minLength: false,
+      hasUpper: false,
+      hasSpecialChar: false
+    },
+    confirmPassword: false
+  })
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [fullName, setFullName] = useState("");
   const validatePassword = (password) => {
     return {
       minLength: password.length >= 8,
-      hasUpper: /A-Z/.test(password),
+      hasUpper: /[A-Z]/.test(password),
       hasSpecialChar: /[!@#$%^&*]/.test(password),
     };
   };
+  function handleSubmit(e) {
+    e.preventDefault()
+
+    const passwordCheck = validatePassword(password)
+
+    if (!email || !fullName || !password) {
+      setErrors({ fullName: !fullName ? "All field is required" : "", email: !email ? "All field is required" : "", password: { minLength: false, hasUpper: false, hasSpecialChar: false } });
+      return;
+    } else if (!email.includes("@")) {
+      setErrors((prev) => ({ ...prev, email: "Invalid email" }));
+      return;
+    } else if (!passwordCheck.minLength || !passwordCheck.hasUpper || !passwordCheck.hasSpecialChar) {
+      setErrors((prev) => ({ ...prev, password: passwordCheck, }));
+      return;
+    } else if (password !== confirmPassword) {
+      setErrors((prev) => ({...prev, confirmPassword: password !== confirmPassword }))
+    }
+
+    alert("Account successfully created!")
+    setFullName("");
+    setEmail("");
+    setPassword("");
+    setErrors({
+      fullName: "",
+      email: "",
+      password: {
+        minLength: false,
+        hasUpper: false,
+        hasSpecialChar: false,
+      },
+      confirmPassword: false
+    });
+  }
+
     return (
       <section className="bg-linear-to-tr from-[#B6D6DC] to-[#0072CE] w-full min-h-screen grid grid-cols-2 justify-between gap-15 px-15 py-16.25">
         <section className="bg-hero bg-cover bg-center rounded-tl-[100px] rounded-br-[100px] text-center text-[#FFFFFF] font-semibold relative shadow-signup px-6 pb-38.5">
@@ -47,7 +87,15 @@ function SignUp() {
                 inputName="full-name"
                 inputID="full-name"
                 placeholder="Enter your name"
+                onChange={(e) => {
+                  setFullName(e.target.value);
+                }}
+                hasError={errors.fullName}
               />
+              {errors.fullName && (
+                <p className="text-[#DC2626] text-xs mt-2">{errors.fullName}</p>
+              )}
+
               <InputField
                 htmlFor="email/phone-number"
                 labelname="Email/Phone number"
@@ -55,7 +103,15 @@ function SignUp() {
                 inputName="email/phone-number"
                 inputID="email/phone-number"
                 placeholder="Enter your email/phone number"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+                hasError={errors.email}
               />
+              {errors.email && (
+                <p className="text-[#DC2626] text-xs mt-2">{errors.email}</p>
+              )}
+
               <InputField
                 htmlFor="password"
                 labelname="Password"
@@ -63,15 +119,27 @@ function SignUp() {
                 inputName="password"
                 inputID="password"
                 placeholder="********"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+                hasError={!errors.password.minLength || !errors.password.hasSpecialChar || !errors.password.hasUpper}
               />
-              <InputField
-                htmlFor="confirm-password"
-                labelname="Confirm Password"
-                inputType="password"
-                inputName="confirm-password"
-                inputID="confirm-password"
-                placeholder="********"
-              />
+              <div>
+                <InputField
+                  htmlFor="confirm-password"
+                  labelname="Confirm Password"
+                  inputType="password"
+                  inputName="confirm-password"
+                  inputID="confirm-password"
+                  placeholder="********"
+                  onChange={(e) => {
+                    setConfirmPassword(e.target.value);
+                  }}
+                  hasError={errors.confirmPassword}
+                />
+                {errors && <p className="text-[#DC2626] mt-2.5">{errors.fullName}</p>}
+              </div>
+
               <div className="flex items-center-safe gap-2">
                 <input
                   type="checkbox"
@@ -88,17 +156,19 @@ function SignUp() {
                   <a className="text-[#0072CE]"> Privacy Policy</a>
                 </label>
               </div>
-              <SubmitButton text="Create Account" />
+              <SubmitButton text="Create Account" onClick={handleSubmit} />
             </form>
             <IntroduceOtherAuthOptions text="Or Sign Up With" />
             <SignupOptions />
-            <FinalAuthScreenElement text={
-              <>
-                Already have an account?{" "}
-                <Link to="/login" className="text-[#0072CE]">
-                  Login
-                </Link>
-              </>}
+            <FinalAuthScreenElement
+              text={
+                <>
+                  Already have an account?{" "}
+                  <Link to="/login" className="text-[#0072CE]">
+                    Login
+                  </Link>
+                </>
+              }
             />
           </div>
         </section>

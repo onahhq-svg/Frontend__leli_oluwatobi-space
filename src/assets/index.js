@@ -24,3 +24,14 @@ export { default as AppleIcon } from "./Icons/apple-icon.svg";
 export { default as FacebookIcon } from "./Icons/facebook-icon.svg";
 export { default as OpenEye } from "./Icons/Open eye.svg";
 export { default as CheckedMarkIcon } from "./Icons/checked-icon.svg";
+
+
+export { default as LandingPageImg1 } from "./Images/Frame1.png";
+export { default as LandingPageImg2 } from "./Images/Frame2.png";
+export { default as LandingPageImg3 } from "./Images/Frame3.png";
+export { default as LandingPageImg4 } from "./Images/Frame4.png";
+export { default as WellnessFeatureIcon } from "./Icons/wellness.svg";
+export { default as NutritionFeatureIcon } from "./Icons/nutrition.svg";
+export { default as FitnessFeatureIcon } from "./Icons/fitness.svg";
+export { default as MedicationsFeatureIcon } from "./Icons/pills.svg";
+export { default as ProfessionalFeatureIcon } from "./Icons/professional.svg";

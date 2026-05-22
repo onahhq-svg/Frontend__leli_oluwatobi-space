@@ -1,260 +1,173 @@
-import React from "react";
-import { useState } from "react";
+import { FitnessFeatureIcon, LandingPageImg1, LandingPageImg2, LandingPageImg3, LandingPageImg4, MedicationsFeatureIcon, NutritionFeatureIcon, Playvideoicon, ProfessionalFeatureIcon, WellnessFeatureIcon } from "../assets";
 import Header from "../components/header";
-import { Link } from 'react-router-dom';
-import { Bluecircle, Ldpimage1, Ldpgimage2, Ldpgimage3, Malesmiling, Playvideoicon, Ellipse, Signup, BrowseExplore, Personalised, HealthFeed, ConnectProf, SocialExp, PersonalisedExp, Checkbox, HandsTogether, DownloadIOS, DownloadAndroid } from "../assets";
 
-function ProblemList({description}) {
+function WellnessNeeds({icon, description, title, iconDesc}) {
   return (
-    <div className="flex items-center bg-[#FFFFFF] rounded-[10px] m-auto text-[24px] font-medium text-[#0F172A} mt-6 gap-4.5 px-[6.53rem] py-2 -tracking-[1.1%] text-[#0F172A]">
-      <img src={Playvideoicon} alt="A play-video icon" />
-      <p>{description}</p>
+    <div className="bg-white rounded-[20px] py-8.5 px-8 flex flex-col gap-4 w-100 text-left shadow-featurecard">
+      <img src={icon} alt={iconDesc} className="w-22.5 h-19.5" />
+      <h6 className="text-lg font-medium text-title">{title}</h6>
+      <p className="text-base text-description leading-[150%]">{description}</p>
     </div>
   );
 }
 
-const FeatureCards = ({image, title, description, animationType }) => {
+function LeliFeaturesCard({ title, description }) {
   return (
-    <div className="bg-[#FFFFFF] rounded-[20px] px-3.5 w-78.75 pt-5 pb-12.5 text-center -tracking-[1.1%]" data-aos={animationType}>
-      <img src={image} alt="An image that visualise the text description" className="w-fit h-fit mb-3.5" />
-      <h6 className="mb-2.5 text-base font-semibold leading-[136%] tracking-tight">{title}</h6>
-      <p className="text-sm">{description}</p>
+    <div className="w-200.25 mx-auto">
+      <div className="flex items-center bg-white gap- rounded-[10px] py-3 gap-4 pl-4 text-title text-titlesize font-semibold">
+        <img src={Playvideoicon} alt="A play video icon to format a list" />
+        <h6>{title}</h6>
+      </div>
+      <p className="text-lg text-description mt-2 px-4.75">{description}</p>
     </div>
   );
 }
 
-function OfferInfo({description}) {
-  return (
-    <div className="text-6 text-[#475569] flex items-center gap-2.75 mb-5">
-      <img src={Checkbox} alt="A checked-box icon" />
-      <p className="text-[#475569] text-6 leading-5">{description}</p>
-    </div>
-  );
-}
 
 function LandingPage() {
     return (
       <>
         <Header />
-
-        <section className="my-18 mx-16 bg-[#E5F1FA] rounded-[20px] px-3.75 flex items-end gap-11.75">
-          <div
-            className="my-23.25 -[100%] -tracking-[1.1%] w-138.5"
-            data-aos="zoom-in"
-          >
-            <h1 className="font-bold text-[56px] text-[#0F172A] leading-15.5">
-              Your Health, Connected In One Place
-            </h1>
-            <p className="text-[#475569] mt-4 text-[24px] font-medium">
-              Discover trusted health information, connect with verified
-              professionals, and explore wellness in a simple, human, and
-              unified platform.
-            </p>
-            <Link to="/signup">
-              <button className="bg-[#0072CE] p-2.5 border border-[#E2E8F0] rounded-[10px] mt-8 w-103.75 text-[#FFFFFF] text-lg cursor-pointer">
-                Get Started
-              </button>
-            </Link>
-            <p className="text-[#475569] text-sm mt-6">
-              Available on Web and mobile
-            </p>
-          </div>
-          <div className="relative w-170.25 px-3.5 right-2" data-aos="zoom-in">
-            <div className="relative">
-              <img src={Bluecircle} alt="" className="m-auto" />
-              <img
-                src={Malesmiling}
-                alt="The hero image of a young male smiling while with his phone "
-                className="absolute inset-0 -translate-y-1/3 bottom-1/2"
-              />
-            </div>
-
-            <img
-              src={Ldpimage1}
-              alt="Image of a lady during workout session"
-              className="absolute w-62.75 bottom-3/5 left-2"
-            />
-            <img
-              src={Ldpgimage2}
-              alt="Image of a doctor in a session with her client"
-              className="absolute w-62.75 bottom-3/5 translate-x-1/3 right-1/6"
-            />
-            <img
-              src={Ldpgimage3}
-              alt="Image of lady in an online session an health expert"
-              className="absolute w-62.75 bottom-1/13 left-2"
-            />
-          </div>
-        </section>
-
-        <section className="bg-[#0072CE] py-[136.5px] text-2xl -tracking-[1.1%]">
-          <div className="w-[61.1rem] mx-auto" data-aos="zoom-in">
-            <h2 className="text-[#FFFFFF] text-[48px] font-semibold text-center -tracking-[1.1%]">
-              Health Information Is Scattered and Overwhelming
-            </h2>
-            {
-              <ProblemList description="Different apps for medication, fitness, therapy, and wellness" />
-            }
-            {
-              <ProblemList description="Conflicting information with no clear source of truth" />
-            }
-            {<ProblemList description="Hard to know what applies to you" />}
-            <p className="text-[#FFFFFF] text-[16px] text-center mt-8">
-              Managing your health shouldn’t feel this complicated.
-            </p>
-          </div>
-        </section>
-
-        <section className="px-16 py-18 flex items-center gap-9.25">
-          <img
-            src={Ellipse}
-            alt="A diagram with infos of healthcare knowledge"
-            className="w-[34.8rem] -[33.94rem]"
-            data-aos="fade-right-down"
-          />
-
-          <div data-aos="zoom-out" data-aos-duration="600">
-            <h2 className="font- text-[#0F172A] text-[48px] font-semibold leading-[120%]  mb-6 tracking-wide">
-              Knowledge First. <br /> Care When You’re Ready.
-            </h2>
-            <p className="font-medium text-2xl text-[#475569] tracking-tight leading-[140%]">
-              We bring health information, wellness tools, and professional
-              guidance into one connected experience designed to feel familiar,
-              calm, and easy to use.
-            </p>
-          </div>
-        </section>
-
-        <section className="bg-[#f7f9fc] p-16">
-          <h2 className="text-[#0F172A] text-[48px] font-semibold text-center -tracking-[1.1%]">
-            HOW IT WORKS
-          </h2>
-          <div
-            className="mt-8 flex gap-12.75"
-            data-aos="fade-down"
-            data-aos-duration="600"
-          >
-            <div className="bg-[#FFFFFF] rounded-[17.65px] flex flex-col gap-[2.9rem] w-100 h-[246.6px] p-auto justify-center items-center shadow-custom text-[30px] text-[#475569] font-medium">
-              <img
-                src={Signup}
-                alt="An icon to describe the signup action"
-                className="w-[63.25px]"
-              />
-              <p>Sign Up</p>
-            </div>
-            <div className="bg-[#FFFFFF] rounded-[17.65px] flex flex-col gap-[2.9rem] w-100 h-[246.6px] p-auto justify-center items-center shadow-custom text-[30px] text-[#475569] font-medium">
-              <img
-                src={BrowseExplore}
-                alt="An icon to describe the browse and explore action"
-                className="w-[63.25px]"
-              />
-              <p>Browse & Explore</p>
-            </div>
-            <div className="bg-[#FFFFFF] rounded-[17.65px] flex flex-col gap-[2.9rem] w-100 h-[246.6px] p-auto justify-center items-center shadow-custom text-[30px] text-[#475569] font-medium">
-              <img
-                src={Personalised}
-                alt="An icon to describe the personalised user's experience"
-                className="w-[63.25px]"
-              />
-              <p>Personalised</p>
-            </div>
-          </div>
-          <p className="text-4 text-[#0072CE] text-center mt-8 -tracking-[1.1%]">
-            No medical jargon. No confusing navigation.
+        <section className="px-16 text-center py-16">
+          <h1 className="text-[56px] font-bold text-title whitespace-pre-wrap">
+            Feel better.  
+            <span className="text-[#0072CE]"> Live healthier. </span> Every day.
+          </h1>
+          <p className="text-2xl text-description leading-8 ">
+            Access fitness, nutrition, mental wellness, and trusted
+            professionals in one place. <br /> Your journey to a healthier
+            lifestyle starts here.
           </p>
-        </section>
-
-        <section className="bg-[#E5F1FA] pt-18 text-[#0F172A] pb-9">
-          <h2 className="text-[48px] font-semibold mb-8 -tracking-[1.1%] text-center">
-            Key Features
-          </h2>
-          <div className="flex items-center justify-center gap-3 px-3">
-            <FeatureCards
-              image={HealthFeed}
-              title="A Unified Health Feed"
-              description="Explore wellness tips, health content, and updates in one place."
-              animationType="flip-right"
-            />
-            <FeatureCards
-              image={ConnectProf}
-              title="Connect With Trusted Professionals"
-              description="Follow verified doctors, therapists, and wellness experts."
-              animationType="flip-left"
-            />
-            <FeatureCards
-              image={PersonalisedExp}
-              title="Personalised Experience"
-              description="Your feed adapts to your interests, needs, and location."
-              animationType="flip-right"
-            />
-            <FeatureCards
-              image={SocialExp}
-              title="Calm, Social Experience"
-              description="Engage with health content in a supportive, distraction-free environment."
-              animationType="flip-left"
-            />
+          <div className="mt-8 text-lg font-semibold w-[29.82rem] flex items-center justify-center mx-auto gap-2">
+            <button className="bg-[#0072CE] text-white rounded-[10px] w-full h-14 cursor-pointer hover:scale-90 transition-transform duration-300">
+              Start Exploring{" "}
+            </button>
+            <button className="border border-[#0072CE] rounded-[10px] w-full h-14 text-[#0072CE] cursor-pointer hover:scale-90 transition-transform duration-300">
+              Join as a Professional
+            </button>
           </div>
-        </section>
-
-        <section className="bg-[#f7f9fc] px-16 flex items-center py-18">
-          <div data-aos="fade-down" data-aos-duration="800">
-            <h3 className="text-[48px] font-semibold text-[#0F172A] mb-8 leading-[120%] tracking-[1.1%]">
-              Built with trust at the core
-            </h3>
-            <OfferInfo description="Verified health professionals" />
-            <OfferInfo description="Privacy-first approach" />
-            <OfferInfo description="Designed to grow witth your health journey" />
-            <p className="text-base text-[#475569] leading-5 mt-1">
-              Your data stays yours
-            </p>
-          </div>
-          <img
-            src={HandsTogether}
-            alt="An image of hands joined together to symbolise a built trust"
-            className="w-188.75"
-            data-aos="fade-down"
-            data-aos-duration="800"
-          />
-        </section>
-
-        <section className="text-center pt-33 pb-27.75 bg-[#0072CE] text-[#FFFFFF] text-6">
-          <div data-aos="fade-up" data-aos-duration="800">
-            <h3 className="text-[40px] font-bold mb-4">
-              Start your health journey today
-            </h3>
-            <p>
-              Join a growing community focused on clarity, connection and
-              wellbeing.
-            </p>
-            <Link to="/signup">
-              <button className="mt-6 text-4 bg-[#0057A3] border border-[#E2E8F0] rounded-[10px] w-90.75 py-[17.5px] transition-transform duration-300 hover:scale-110">
-                Get Started
-              </button>
-            </Link>
-          </div>
-        </section>
-
-        <footer className="bg-[#0F172A] px-16 text-[#FFFFFF] font-semibold flex justify-between items-start pt-4.25 pb-27.25">
-          <div>
-            <h5 className="text-6 mb-4 mt-3">Download Our Mobile App</h5>
-            <div className="flex items-center gap-6">
+          <div className="relative mb-">
+            <div className="mt-10 flex items- gap-4 overflow-hidden">
               <img
-                src={DownloadIOS}
-                alt="A prompt to download the app for an IOS device"
+                src={LandingPageImg1}
+                alt="Image of a patient on a virtual consultation with her doctor"
               />
               <img
-                src={DownloadAndroid}
-                alt="A prompt to download the app for an Android device"
+                src={LandingPageImg2}
+                alt="An image of a female patient having a conversaton with her doctor in his office."
+              />
+              <img
+                src={LandingPageImg3}
+                alt="Iage of five ladies in a workout session"
+              />
+              <img
+                src={LandingPageImg4}
+                alt="Image of a table with a doctor's hand recommending some presented fruits for his patient"
               />
             </div>
+            <div
+              className="w-full h-15 absolute bottom-0 left-0 bg-white"
+              style={{ clipPath: "ellipse(50% 100% at 50% 100%)" }}
+            ></div>
+            <div className="absolute flex items-center z-10 gap-12 left-1/2 -translate-x-1/2 text-title font-semibold text-2xl">
+              <div className="border-r border-r-black p-3">
+                <p>50K+</p>
+                <p className="text-[14px] text-description font-normal">
+                  Active Users
+                </p>
+              </div>
+              <div className="border-r border-r-black p-3">
+                <p>500+</p>
+                <p className="text-[14px] text-description font-normal">
+                  Professionals
+                </p>
+              </div>
+              <div className="border-r border-r-black p-3">
+                <p>4.9/5</p>
+                <p className="text-[14px] text-description font-normal">
+                  User Rating
+                </p>
+              </div>
+            </div>
           </div>
-          <ul className="flex items-center gap-8 text-lg ">
-            <li>About</li>
-            <li>Contact</li>
-            <li>Privacy Policy</li>
-            <li>Terms of Service</li>
-          </ul>
-        </footer>
+        </section>
+
+        <section className="px-16 py-25 text-center bg-[#F7F9FC]">
+          <h3 className="font-semibold text-[40px] text-title">
+            Everything you need for{" "}
+            <span className="text-[#0072CE]">holistic wellness</span>
+          </h3>
+          <p className="mt-2 text-description text-2xl leading-8 w-182.5 mx-auto">
+            Leli brings together all aspects of health and wellness in one
+            simple, accessible platform
+          </p>
+
+          <div className="flex flex-wrap gap-6.25 mt-20">
+            <WellnessNeeds
+              icon={WellnessFeatureIcon}
+              iconDesc="An icon displayed on the wellness feature card"
+              title="Mental Wellness"
+              description="Guided meditation, stress relief, and mental health resources for a peaceful mind."
+            />
+            <WellnessNeeds
+              icon={NutritionFeatureIcon}
+              iconDesc="An apple icon displayed on the nutrition feature card"
+              title="Nutrition"
+              description="Healthy recipes, meal plans, and nutrition tips for balanced eating."
+            />
+            <WellnessNeeds
+              icon={FitnessFeatureIcon}
+              iconDesc="A weight metal icon representing the fitness feature card"
+              title="Fitness"
+              description="Custom workout plans, exercise guides, and fitness tracking to stay active.."
+            />
+            <WellnessNeeds
+              icon={MedicationsFeatureIcon}
+              iconDesc="A pill icon representing the medication feature card"
+              title="Medications"
+              description="Medication information, reminders, and safety guidelines at your fingertips."
+            />
+            <WellnessNeeds
+              icon={ProfessionalFeatureIcon}
+              iconDesc="A human head icon representing the professional-care feature card"
+              title="Professional"
+              description="Connect with verified doctors, trainers, nutritionists, and wellness coaches."
+            />
+          </div>
+        </section>
+
+        <section className="px-16 py-23.5 bg-[#F7F9FC]">
+          <h3 className="text-title text-[40px] font-semibold text-center">
+            Why choose Leli?
+          </h3>
+          <h3 className="text-2xl text-description text-center">
+            A comprehensive platform designed to make health and wellness
+            simple, accessible, and effective.
+          </h3>
+          <div className="flex flex-col gap-4 mt-20 mx-auto">
+            <LeliFeaturesCard
+              title="Get trusted health information"
+              description="Access verified content from healthcare professionals and wellness experts you can rely on."
+            />
+            <LeliFeaturesCard
+              title="Improve your lifestyle daily"
+              description="Small, actionable steps in fitness, nutrition, and mental wellness that fit into your routine."
+            />
+            <LeliFeaturesCard
+              title="Connect with verified professionals"
+              description="Book sessions with certified doctors, trainers, nutritionists, and mental health coaches."
+            />
+            <LeliFeaturesCard
+              title="All-in-one health experience"
+              description="No more juggling multiple apps. Everything you need for wellness in a single platform."
+            />
+          </div>
+        </section>
+
+        <section className="py-20.25 px-16">
+
+        </section>
+
       </>
     );
 }
