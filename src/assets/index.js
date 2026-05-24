@@ -35,3 +35,8 @@ export { default as NutritionFeatureIcon } from "./Icons/nutrition.svg";
 export { default as FitnessFeatureIcon } from "./Icons/fitness.svg";
 export { default as MedicationsFeatureIcon } from "./Icons/pills.svg";
 export { default as ProfessionalFeatureIcon } from "./Icons/professional.svg";
+export { default as HealthContent } from "./Icons/health-content.svg";
+export { default as SearchIcon } from "./Icons/search.svg";
+export { default as Professionals2 } from "./Icons/professionals2.svg";
+export { default as ProfessionalsFrame } from "./Images/professionals.png";
+export { default as Stethoscope } from "./Icons/medical-doctor.svg";

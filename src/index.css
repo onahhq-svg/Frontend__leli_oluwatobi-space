@@ -4,9 +4,11 @@
   --font-dm: "DM Sans", sans-serif;
   --shadow-custom: 0 1.47px 4.41px 1.47px #00000026, 0 1.47px 2.94px 0 #0000004D;
   --shadow-featurecard: 0 2px 3px 0 #0000004D, 0 6px 10px 4px #0000004D;
+  --shadow-processcard: 0 1.47px 4.41px #00000026, 0 1.27px 2.94px 0 #0000004D;
   --background-image-hero: url('/src/assets/Images/sign-up-screen.jpg');
   --color-title: #0F172A;
   --color-description: #475569;
+  --color-primary: #0072CE;
   --text-titlesize: 24px;
   --font-title: 
 }
