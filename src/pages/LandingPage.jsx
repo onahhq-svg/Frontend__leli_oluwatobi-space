@@ -55,20 +55,20 @@ function ProcessFeatureCard({title, description, icon, iconDesc}) {
 
 function ExpertComponent({img, imgDesc}) {
   return (
-    <div className="rounded-[9.5px] bg-white w-[300px] overflow-hidden">
+    <div className="rounded-[9.5px] bg-white w-[400px] overflow-hidden">
       <div className="relative">
-        <img src={img} alt={imgDesc} className="w-full h-[138.27px]" />
+        <img src={img} alt={imgDesc} className="w-full h-[204px]" />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
           <div className="bg-white rounded-full w-[60px] h-[60px] flex justify-center items-center cursor-pointer">
             <FaPlay color="black/40" className="ml-0.5" />
           </div>
         </div>
       </div>
-      <div className="px-3 py-2">
-        <h6 className="text-base text-title font-semibold mt-1">
+      <div className="px-4 py-2">
+        <h6 className="text-2xl text-title font-semibold">
           5-Minute Morning Yoga flow
         </h6>
-        <div className="text-xs text-description flex items-center justify-between mt-3.5">
+        <div className="text-base text-description flex items-center justify-between mt-6">
           <p>Dr Sarah Mitchell</p>
           <p>12.5k views</p>
         </div>
@@ -344,7 +344,7 @@ function LandingPage() {
           </button>
         </section>
 
-        <section className="bg-linear-to-bl from-primary to-[#B6D6DC] py-25 px-16 text-center text-primary">
+        <section className="bg-[linear-gradient(135deg,var(--color-primary)_0%,#B6D6DC_100%)] py-25 px-16 text-center text-primary">
           <p className="text-base leading-[100%]">
             For Healthcare & Wellness as Professionals
           </p>
