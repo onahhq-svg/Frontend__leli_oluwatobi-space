@@ -1,13 +1,14 @@
 import { useState } from "react";
-import { FitnessFeatureIcon, HealthContent, LandingPageImg1, LandingPageImg2, LandingPageImg3, LandingPageImg4, MedicationsFeatureIcon, NutritionFeatureIcon, Playvideoicon, ProfessionalFeatureIcon, Professionals2, ProfessionalsFrame, SearchIcon, Stethoscope, WellnessFeatureIcon} from "../assets";
+import { DietDish, Facebook, FitnessFeatureIcon, FooterAndroidDownload, FooterIOSDownload, HealthContent, HumanHeads, InstagramIcon, LandingPageImg1, LandingPageImg2, LandingPageImg3, LandingPageImg4, Logo, LoveSymbol, MedicationsFeatureIcon, MichealHeadShot, NutritionFeatureIcon, Playvideoicon, ProfessionalFeatureIcon, Professionals2, ProfessionalsFrame, RollPrint, SearchIcon, StarRate, Stethoscope, TikTok, TwitterIcon, WellnessFeatureIcon, YogaFlowCover} from "../assets";
 import Header from "../components/header";
 import { IoMdArrowRoundForward } from "react-icons/io";
-import { IoFitness } from "react-icons/io5";
+import { FaPlay } from 'react-icons/fa6';
+
 
 
 function WellnessNeeds({icon, description, title, iconDesc}) {
   return (
-    <div className="bg-white rounded-[20px] py-8.5 px-8 flex flex-col gap-4 w-100 text-left shadow-featurecard">
+    <div className="bg-white rounded-[20px] py-8.5 px-8 flex flex-col gap-4 flex-1 basis-[31%] text-left shadow-featurecard">
       <img src={icon} alt={iconDesc} className="w-22.5 h-19.5" />
       <h6 className="text-lg font-medium text-title">{title}</h6>
       <p className="text-base text-description leading-[150%]">{description}</p>
@@ -29,7 +30,7 @@ function LeliFeaturesCard({ title, description }) {
 
 function ProfessionalOptionsCard({icon, iconDesc, title, description, buttonText }) {
   return (
-    <div className="px-6 py-5 gap-5 flex flex-col flex-wrap text-base rounded-lg bg-[#FFFFFF] w-100 text-right">
+    <div className="px-6 py-5 gap-5 flex flex-col text-base rounded-lg bg-[#FFFFFF] flex-1 basis-[30%] text-left">
       <img src={icon} alt={iconDesc} className="w-11" />
       <h6 className="text-lg text-title font-medium -tracking-[1.1%]">
         {title}
@@ -52,28 +53,77 @@ function ProcessFeatureCard({title, description, icon, iconDesc}) {
   )
 }
 
-function ExpertComponent() {
+function ExpertComponent({img, imgDesc}) {
   return (
-    <div>
-      <video src=""></video>
-      <title></title>
-    </div>
-  )
-}
-
-function Testimonials() {
-  return (
-    <div className="bg-[#E5F1FA] p-6 rounded-[14px]">
-      <div></div>
-      <p className="text-base text-description mt-4">{ text }</p>
-      <div>
-        <img src={ } alt="" />
-        <div>
-          <p></p>
+    <div className="rounded-[9.5px] bg-white w-[300px] overflow-hidden">
+      <div className="relative">
+        <img src={img} alt={imgDesc} className="w-full h-[138.27px]" />
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+          <div className="bg-white rounded-full w-[60px] h-[60px] flex justify-center items-center cursor-pointer">
+            <FaPlay color="black/40" className="ml-0.5" />
+          </div>
+        </div>
+      </div>
+      <div className="px-3 py-2">
+        <h6 className="text-base text-title font-semibold mt-1">
+          5-Minute Morning Yoga flow
+        </h6>
+        <div className="text-xs text-description flex items-center justify-between mt-3.5">
+          <p>Dr Sarah Mitchell</p>
+          <p>12.5k views</p>
         </div>
       </div>
     </div>
-  )
+  );
+}
+
+function AboutLeli({icon, title, description, iconDesc}) {
+  return (
+    <div className="flex py-4 gap-3 rounded-lg items-start bg-[#E5F1FA80] px-[77.5px]">
+      <img src={icon} alt={iconDesc} />
+      <div className="text-base text-description">
+        <h6 className="text-titlesize text-[#000000] font-semibold leading-[100%] mb-1">{title}</h6>
+        <p>{description}</p>
+      </div>
+    </div>
+  );
+}
+
+function Testimonials({text}) {
+  return (
+    <div className="bg-[#E5F1FA] p-6 rounded-[14px] text-base w-105 h-77.75">
+      <div className="flex items-center">
+        <img
+          src={StarRate}
+          alt="A gold star representing the users rating of Leli"
+        />
+        <img
+          src={StarRate}
+          alt="A gold star representing the users rating of Leli"
+        />
+        <img
+          src={StarRate}
+          alt="A gold star representing the users rating of Leli"
+        />
+        <img
+          src={StarRate}
+          alt="A gold star representing the users rating of Leli"
+        />
+        <img
+          src={StarRate}
+          alt="A gold star representing the users rating of Leli"
+        />
+      </div>
+      <p className="mt-4 mb-4.5 text-justify">{text}</p>
+      <div className="flex items-center text-left gap-2.5">
+        <img src={MichealHeadShot} alt="An closeup shot of Leli user" className="rounded-full w-12.5 h-12.5" />
+        <div>
+          <h6 className="text-[#000000] font-semibold">Michael Rodriguez</h6>
+          <p className="text-sm">Leli User</p>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 
@@ -82,7 +132,7 @@ function LandingPage() {
     return (
       <>
         <Header />
-        <section className="px-16 text-center py-16">
+        <section className="px-16 text-center pt-16 pb-40">
           <h1 className="text-[56px] font-bold text-title whitespace-pre-wrap">
             Feel better.  
             <span className="text-primary"> Live healthier. </span> Every day.
@@ -100,8 +150,8 @@ function LandingPage() {
               Join as a Professional
             </button>
           </div>
-          <div className="relative mb-">
-            <div className="mt-10 flex items- gap-4 overflow-hidden">
+          <div className="relative">
+            <div className="mt-10 flex items-center gap-4 overflow-hidden">
               <img
                 src={LandingPageImg1}
                 alt="Image of a patient on a virtual consultation with her doctor"
@@ -121,9 +171,9 @@ function LandingPage() {
             </div>
             <div
               className="w-full h-15 absolute bottom-0 left-0 bg-white"
-              style={{ clipPath: "ellipse(50% 100% at 50% 100%)" }}
+              style={{ clipPath: "ellipse(54% 100% at 50% 100%)" }}
             ></div>
-            <div className="absolute flex items-center z-10 gap-12 left-1/2 -translate-x-1/2 text-title font-semibold text-2xl">
+            <div className="absolute -bottom-2 flex items-center z-10 gap-12 left-1/2 -translate-x-1/2 translate-y-1/2 text-title font-semibold text-2xl">
               <div className="border-r border-r-black p-3">
                 <p>50K+</p>
                 <p className="text-[14px] text-description font-normal">
@@ -136,7 +186,7 @@ function LandingPage() {
                   Professionals
                 </p>
               </div>
-              <div className="border-r border-r-black p-3">
+              <div className="">
                 <p>4.9/5</p>
                 <p className="text-[14px] text-description font-normal">
                   User Rating
@@ -226,13 +276,13 @@ function LandingPage() {
           <p>Simple steps to start your health journey or grow your practice</p>
           <div className="flex gap-4 items-center justify-center rounded-md mt-20 mb-8 text-base text-center">
             <button
-              className={`${selectedOption === "users" ? "bg-[#DBE5FF] text-[#0072CE]" : "bg-[#FFFFFF] text-[#000000]"} rounded-lg border border-[#DBE5FF] px-5.75 py-[9.5px]  `}
+              className={`${selectedOption === "users" ? "bg-[#DBE5FF] text-primary" : "bg-[#FFFFFF] text-[#000000]"} rounded-lg border border-[#DBE5FF] px-5.75 py-[9.5px]  `}
               onClick={() => setSelectedOption("users")}
             >
               For users
             </button>
             <button
-              className={`${selectedOption === "professionals" ? "bg-[#DBE5FF] text-[#0072CE]" : "bg-[#FFFFFF] text-[#000000]"} rounded-lg border border-[#DBE5FF] px-5.75 py-[9.5px]  `}
+              className={`${selectedOption === "professionals" ? "bg-[#DBE5FF] text-primary" : "bg-[#FFFFFF] text-[#000000]"} rounded-lg border border-[#DBE5FF] px-5.75 py-[9.5px]  `}
               onClick={() => setSelectedOption("professionals")}
             >
               For professionals
@@ -283,7 +333,7 @@ function LandingPage() {
               }
             />
           </div>
-          <button className="bg-[#0072CE] mt-14 text-[#FFFFFF] rounded-[10px] w-110.75 py-4.25 flex items-center justify-center gap-2 mx-auto cursor-pointer hover:scale-90 transition-transform duration-300 ease-in-out">
+          <button className="bg-primary mt-14 text-[#FFFFFF] rounded-[10px] w-110.75 py-4.25 flex items-center justify-center gap-2 mx-auto cursor-pointer hover:scale-90 transition-transform duration-300 ease-in-out">
             {selectedOption === "users" ? (
               <>
                 Start Exploring <IoMdArrowRoundForward color="#FFFFFF" />
@@ -311,7 +361,7 @@ function LandingPage() {
             alt="A lineup of five medical professionals"
           />
 
-          <div className="grid grid-row-2 grid-cols-3  gap-14 ">
+          <div className="flex flex-wrap gap-10 mt-6">
             <ProfessionalOptionsCard
               icon={Stethoscope}
               iconDesc="A sthethoscope representing the doctor profession"
@@ -351,21 +401,163 @@ function LandingPage() {
         </section>
 
         <section className="p-16 bg-[#F7F9FC]">
-          <h2 className="text-[40px] font-semibold text-title mb-4">
+          <h2 className="text-[40px] font-semibold text-title mb-4 text-center">
             Explore expert Content
           </h2>
-          <p className="text-2xl text-description mb-20">
+          <p className="text-2xl text-description mb-20 text-center">
             Simple steps to start your health journey or grow your practice
           </p>
-        </section>
 
-        <section className="bg-[#F7F9FC] py-24 px-16">
-          <h2>Loved by users and professionals</h2>
-          <p>See what our community has to say about their LELI experience</p>
-          <div className="mt-20">
-
+          <div className="flex items-center gap-5 justify-center">
+            <ExpertComponent
+              img={YogaFlowCover}
+              imgDesc="A lady performing yoga on the mat"
+            />
+            <ExpertComponent
+              img={DietDish}
+              imgDesc="A dish containing some combinaiton of veggies to represent diet"
+            />{" "}
+            <ExpertComponent
+              img={YogaFlowCover}
+              imgDesc="A lady performing yoga on the mat"
+            />
           </div>
         </section>
+
+        <section className="bg-[#F7F9FC] py-24 px-16 text-description text-center">
+          <h2 className="text-title font-semibold text-[40px] leading-[100%]">
+            Loved by users and professionals
+          </h2>
+          <p className="text-2xl mt-2">
+            See what our community has to say about their LELI experience
+          </p>
+          <div className="mt-20 flex items-center gap-6.5">
+            <Testimonials text='"CareCircle has completely transformed my approach to health. From fitness routines to mental wellness tips, everything I need is in one place. The professional network is incredible!"' />
+            <Testimonials text='"As a nutritionist, CareCircle has allowed me to reach so many more people. The platform is intuitive, and I love how I can share meal plans and connect with clients seamlessly."' />
+            <Testimonials text='"CareCircle has completely transformed my approach to health. From fitness routines to mental wellness tips, everything I need is in one place. The professional network is incredible!"' />
+          </div>
+        </section>
+
+        <section className="bg-[#F7F9FC] p-16">
+          <h2 className="text-title text-[40px] font-semibold text-center">
+            About LELI
+          </h2>
+          <p className="mt-2 text-description text-titlesize text-center">
+            Making health simple, accessible, and holistic
+          </p>
+          <div className="mt-20 flex items-start gap-1.5">
+            <p className="leading-10 text-2xl text-description tracking-[0.43%] w-[50%]">
+              LELI was created to bridge the gap between traditional healthcare
+              and everyday wellness. We combine expert medical knowledge with
+              practical lifestyle guidance — from fitness and nutrition to
+              mental wellness and medication management.
+              <br /> Our mission is to empower individuals to take control of
+              their health journey while connecting them with verified
+              professionals who can provide personalized guidance and support.
+            </p>
+            <div className="flex flex-col gap-10.75 w-[50%] ">
+              <AboutLeli
+                icon={LoveSymbol}
+                iconDesc="A love symbol describing the holsiticity of Leli offerings"
+                title="Holisitic Car"
+                description="We believe health is more than just medical — it's fitness, nutrition, and mental wellness combined."
+              />
+              <AboutLeli
+                icon={RollPrint}
+                iconDesc="A symbol containing a roll-like print describing the general accessibilty of Leli"
+                title="Accessible for All"
+                description="Making quality health information and professional care available to everyone, everywhere."
+              />
+              <AboutLeli
+                icon={HumanHeads}
+                iconDesc="Human heads symbol representing the community goal of Leli"
+                title="Community Driven"
+                description="Built by healthcare professionals and users working together for better wellness outcomes."
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[#E5F1FA] px-16 py-29.75">
+          <div className="bg-primary rounded-xl text-center text-[#FFFFFF] pt-8 pb-12.5 text-sm">
+            <h2 className="font-semibold text-[48px]">
+              Ready to transform your health journey?
+            </h2>
+            <p className="mt-2 max-w-146 text-lg mx-auto">
+              Join thousands of users and professionals who are making health
+              and wellness simple, accessible, and effective with CareCircle
+            </p>
+            <div className="flex items-center justify-center my-10 gap-4 text-lg font-semibold">
+              <button className="w-70 py-[17.5px] border bg-white rounded-[10px] border-primary text-primary leading-5.25 -tracking-[0.32px] cursor-pointer transition-transform hover:scale-90 duration-300 ease-in-out">
+                Join as a Professional
+              </button>
+              <button className="w-70 py-[17.5px] flex items-center justify-center gap-1.75 border rounded-[10px] border-[#FFFFFF] leading-5.25 -tracking-[0.32px] cursor-pointer transition-transform hover:scale-90 duration-300 ease-in-out">
+                Start your health journey{" "}
+                <span>
+                  <IoMdArrowRoundForward />
+                </span>
+              </button>
+            </div>
+            <p>No credit card required • Get started in less than 2 minutes</p>
+          </div>
+        </section>
+
+        <footer className="px-16 py-26.75 bg-[#101828] text-[#FFFFFF99] flex flex-wrap items-start justify-between">
+          <div className="w-62.25">
+            <img src={Logo} alt="" className="w-22.25 h-16.75 p-2" />
+            <p className="text-sm leading-5">
+              Your everyday health, fitness, and wellness companion. From mental
+              wellness and nutrition to medications and expert advice —
+              everything in one place.
+            </p>
+          </div>
+          <div className="flex flex-col gap-2.5">
+            <h5 className="mb-1 text-[#FFFFFF] text-xl font-semibold">
+              Explore
+            </h5>
+            <p>Fitness</p>
+            <p>Nutrition</p>
+            <p>Mental Wellness</p>
+            <p>Medications</p>
+            <p>Community</p>
+          </div>
+          <div className="flex flex-col gap-2.5">
+            <h5 className="mb-1 text-[#FFFFFF] text-xl font-semibold">
+              For Professionals
+            </h5>
+            <p>Join as Professional</p>
+            <p>Partner With Us</p>
+            <p>Resources</p>
+            <p>Request demo</p>
+          </div>
+          <div className="flex flex-col gap-2.5">
+            <h5 className="mb-1 text-[#FFFFFF] text-xl font-semibold">
+              Company
+            </h5>
+            <p>About Us</p>
+            <p>How it Works</p>
+            <p>Features</p>
+          </div>
+          <div className="flex flex-col gap-2.5">
+            <h5 className="mb-1 text-[#FFFFFF] text-xl font-semibold">Legal</h5>
+            <p>Privacy Policy</p>
+            <p>Terms of Service</p>
+            <p>Cookie Policy</p>
+          </div>
+
+          <div className="mt-10 w-full flex items-center gap-50">
+            <div className="flex gap-5.5">
+              <img src={FooterIOSDownload} alt="" />
+              <img src={FooterAndroidDownload} alt="" />
+            </div>
+            <div className="flex items-center gap-2">
+              <img src={Facebook} alt="" />
+              <img src={TwitterIcon} alt="" />
+              <img src={TikTok} alt="" />
+              <img src={InstagramIcon} alt="" />
+            </div>
+          </div>
+        </footer>
       </>
     );
 }
