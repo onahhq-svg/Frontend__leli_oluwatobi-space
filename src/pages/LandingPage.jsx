@@ -485,7 +485,7 @@ function LandingPage() {
         </section>
 
         <section className="bg-[#E5F1FA] lg:px-16 sm:px-6 px-4 lg:py-29.75 py-6">
-          <div className="bg-primary rounded-xl text-center text-[#FFFFFF] pt-8 pb-12.5 text-sm">
+          <div className="bg-primary rounded-xl text-center text-[#FFFFFF] pt-8 pb-12.5 lg:text-sm text-xs lg:px-0 px-10.5">
             <h2 className="font-semibold lg:text-[48px] sm:text-[32px] text-2xl">
               Ready to transform your health journey?
             </h2>
@@ -493,11 +493,11 @@ function LandingPage() {
               Join thousands of users and professionals who are making health
               and wellness simple, accessible, and effective with CareCircle
             </p>
-            <div className="flex items-center justify-center lg:my-10 my-6 gap-4 text-lg font-semibold">
-              <button className="w-70 py-[17.5px] border bg-white rounded-[10px] border-primary text-primary leading-5.25 -tracking-[0.32px] cursor-pointer transition-transform hover:scale-90 duration-300 ease-in-out">
+            <div className="flex sm:flex-row flex-col items-center justify-center lg:my-10 my-6 sm:gap-4 gap-3 lg:text-lg text-xs font-semibold">
+              <button className="lg:w-70 w-50 lg:py-[17.5px] py-3 border bg-white rounded-[10px] border-primary text-primary leading-5.25 -tracking-[0.32px] cursor-pointer transition-transform hover:scale-90 duration-300 ease-in-out">
                 Join as a Professional
               </button>
-              <button className="w-70 py-[17.5px] flex items-center justify-center gap-1.75 border rounded-[10px] border-[#FFFFFF] leading-5.25 -tracking-[0.32px] cursor-pointer transition-transform hover:scale-90 duration-300 ease-in-out">
+              <button className="lg:w-70 w-50 lg:py-[17.5px] py-3 flex items-center justify-center gap-1.75 border rounded-[10px] border-[#FFFFFF] leading-5.25 -tracking-[0.32px] cursor-pointer transition-transform hover:scale-90 duration-300 ease-in-out">
                 Start your health journey{" "}
                 <span>
                   <IoMdArrowRoundForward />
@@ -508,17 +508,17 @@ function LandingPage() {
           </div>
         </section>
 
-        <footer className="px-16 py-26.75 bg-[#101828] text-[#FFFFFF99] flex flex-wrap items-start justify-between">
-          <div className="w-62.25">
+        <footer className="lg:px-16 sm:px-10 px-6 lg:py-26.75 sm:py-16.25 py-20 bg-[#101828] text-[#FFFFFF99] flex flex-wrap items-start justify-between sm:gap-0 gap-10 lg:text-sm text-xs">
+          <div className="max-w-62.25 -w-42">
             <img src={Logo} alt="" className="w-22.25 h-16.75 p-2" />
-            <p className="text-sm leading-5">
+            <p className="lg:text-sm text-xs leading-5">
               Your everyday health, fitness, and wellness companion. From mental
               wellness and nutrition to medications and expert advice —
               everything in one place.
             </p>
           </div>
-          <div className="flex flex-col gap-2.5">
-            <h5 className="mb-1 text-[#FFFFFF] text-xl font-semibold">
+          <div className="flex flex-col lg:gap-2.5 gap-2">
+            <h5 className="mb-2 text-[#FFFFFF] lg:text-xl text-base font-semibold">
               Explore
             </h5>
             <p>Fitness</p>
@@ -527,8 +527,8 @@ function LandingPage() {
             <p>Medications</p>
             <p>Community</p>
           </div>
-          <div className="flex flex-col gap-2.5">
-            <h5 className="mb-1 text-[#FFFFFF] text-xl font-semibold">
+          <div className="flex flex-col lg:gap-2.5 gap-2">
+            <h5 className="mb-2 text-[#FFFFFF] lg:text-xl text-base font-semibold">
               For Professionals
             </h5>
             <p>Join as Professional</p>
@@ -536,31 +536,31 @@ function LandingPage() {
             <p>Resources</p>
             <p>Request demo</p>
           </div>
-          <div className="flex flex-col gap-2.5">
-            <h5 className="mb-1 text-[#FFFFFF] text-xl font-semibold">
+          <div className="flex flex-col lg:gap-2.5 gap-2">
+            <h5 className="mb-2 text-[#FFFFFF] lg:text-xl text-base font-semibold">
               Company
             </h5>
             <p>About Us</p>
             <p>How it Works</p>
             <p>Features</p>
           </div>
-          <div className="flex flex-col gap-2.5">
-            <h5 className="mb-1 text-[#FFFFFF] text-xl font-semibold">Legal</h5>
+          <div className="flex flex-col lg:gap-2.5 gap-2">
+            <h5 className="mb-2 text-[#FFFFFF] lg:text-xl text-base font-semibold">Legal</h5>
             <p>Privacy Policy</p>
             <p>Terms of Service</p>
             <p>Cookie Policy</p>
           </div>
 
-          <div className="mt-10 w-full flex items-center gap-50">
+          <div className="mt-10 w-full flex sm:flex-row flex-col items-center lg:gap-50 sm:gap-20">
             <div className="flex gap-5.5">
               <img src={FooterIOSDownload} alt="" />
               <img src={FooterAndroidDownload} alt="" />
             </div>
-            <div className="flex items-center gap-2">
-              <img src={Facebook} alt="" />
-              <img src={TwitterIcon} alt="" />
-              <img src={TikTok} alt="" />
-              <img src={InstagramIcon} alt="" />
+            <div className="flex items-center gap-2 sm:mt-0 mt-10">
+              <img src={Facebook} alt="A facebook icon" />
+              <img src={TwitterIcon} alt="A X icon" />
+              <img src={TikTok} alt="A TikTok icon" />
+              <img src={InstagramIcon} alt="An instagram icon" />
             </div>
           </div>
         </footer>
